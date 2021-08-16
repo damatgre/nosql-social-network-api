@@ -41,6 +41,7 @@ const userController = {
   //add friend, similar to reaction
   addFriend({ params }, res) {
     User.findOneAndUpdate(
+      // console.log(params.userId),
       { _id: params.userId },
       { $push: { friends: params.friendId } },
       { new: true, runValidators: true })
